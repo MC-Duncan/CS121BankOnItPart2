@@ -33,7 +33,7 @@ public class Admin extends User implements HasMenu, Serializable {
     // will be implemented in Bank
   } // end start
 
-  public String getReport()
+  public String getReport(){
     String report = "Admin Username: " + this.getUserName();
     report += ", Admin PIN: " + this.getPIN();
     return report;

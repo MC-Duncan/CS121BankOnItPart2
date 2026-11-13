@@ -11,7 +11,12 @@ public class Bank implements HasMenu {
   } // end main
 
   public Bank(){
+    //this.loadSampleCustomers();
+    //this.saveCustomers();
+
+    this.loadCustomers();
     this.start();
+    this.saveCustomers();
   } // end constructor
 
   public String menu(){
@@ -23,10 +28,10 @@ public class Bank implements HasMenu {
     System.out.println("1: Login As Admin");
     System.out.println("2: Login As Customer");
     System.out.println();
-    System.out.println("Action: ");
+    System.out.print("Action: ");
     String response = input.nextLine();
 
-    return reponse;
+    return response;
   } // end menu
 
   public void start(){
@@ -115,6 +120,30 @@ public class Bank implements HasMenu {
       currentCustomer.start();
     } // end if
   } // end loginAsCustomer
+
+  public void saveCustomers(){
+    try {
+      FileOutputStream fo = new FileOutputStream("Customers.dat");
+      ObjectOutputStream obOut = new ObjectOutputStream(fo);
+      obOut.writeObject(customers);
+      obOut.close();
+      fo.close();
+    } catch (Exception e){
+      System.out.println(e.getMessage());
+    } // end try
+  } // end saveCustomers
+
+  public void loadCustomers(){
+    try {
+      FileInputStream fi = new FileInputStream("Customers.dat");
+      ObjectInputStream obIn = new ObjectInputStream(fi);
+      customers = (CustomerList)obIn.readObject();
+      obIn.close();
+      fi.close();
+    } catch (Exception e){
+      System.out.println(e.getMessage());
+    } // end try
+  } // end loadCustomers
 
 } // end Bank
 
