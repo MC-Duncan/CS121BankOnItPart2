@@ -215,3 +215,48 @@ public String menu():
   set result to user input
   return result
 ```
+
+## Admin (extends User)
+
+```
+public static void main(String[] args):
+
+public Admin():
+
+public String menu():
+
+public void start():
+
+public String getReport():
+```
+
+## Bank
+
+```
+Admin admin = new Admin()
+CustomerList customers = new CustomerList()
+
+public static void main(String[] args):
+
+public Bank():
+
+public String menu():
+
+public void start():
+
+public void startAdmin():
+
+public void loadSampleCustomers():
+
+public void reportAllCustomers():
+
+public void addUser():
+
+public void applyInterest():
+
+public void loginAsCustomer():
+
+public void saveCustomers():
+
+public void loadCustomers():
+```

@@ -2,7 +2,7 @@ import java.util.*;
 
 public class SavingsAccount extends CheckingAccount {
  
-  double interestRate = 05d;
+  double interestRate = .05d;
 
   public static void main(String[] args){
     SavingsAccount sa = new SavingsAccount();
