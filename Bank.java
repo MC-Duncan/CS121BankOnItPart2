@@ -79,8 +79,7 @@ public class Bank implements HasMenu {
     customers.add(new Customer("Cindy", "3333"));
   } // end loadSampleCustomers
 
-  public void reportAllCustomers(){
-    for (Customer customer: customers){
+  public void reportAllCustomers(){    for (Customer customer: customers){
       System.out.println(customer.getReport());
     } // end for
   } // endreportAllCustomers
@@ -96,6 +95,7 @@ public class Bank implements HasMenu {
 
   public void applyInterest(){
     for (Customer customer: customers){
+      customer.savings.setInterestRate(0.05d);
       customer.savings.calcInterest();
     } // end for
   } // end applyInterest
